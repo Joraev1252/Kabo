@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ <header class="header_promo other_pages_header">
+            <div class="header_promo_background" style="background-image: url({% static 'data/img/promo.jpg' %})"></div>
+            <div class="video_overlay"></div>
+            <div class="header_promo_video">
+                <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+                    src="{% static 'data/promo/promo_header.mp4' %}"></video>
+            </div>
+            <div class="header_promo_title">
+                <h1><span>{{ post.company }}</span></h1>
+                <ul class="header_promo_breadcrumbs">
+                    <li>
+                        <a href="{% url 'Home:HomeViews' %}">Главная</a><i>/</i>
+                    </li>
+                    <li>
+                        <a href="{% url 'projects:views' %}">ПРОЕКТЫ</a><i>/</i>
+                    </li>
+                    <li>
+                        <span>
+                            {{ post.company }}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="project_individual">
+            <div class="container">
+                <div class="section_content">
+                    <div class="project_list">
+                        <div class="project_item project_triangle_before first_animation invisible">
+                            <span class="project_img">
+                                <img src="{{ post.imageURL }}" alt="">
+                            </span>
+                            <div class="divisions_item_right">
+                                <h5 class="company_name long_line_before">Kabo</h5>
+                                <h2>{{ post.company }}</h2>
+                                <h4>{{ post.founder }}</h4>
+                                <p>{{ post.info }}</p>
+                                <p align="right"><a href="{% url 'projects:views' %}" class="active-btn mt-3"><span>Вернуться к списку проектов</span></a></p>
+                                <p align="right"><a href="{% url 'projects:edit' post.id %}" class="active-btn mt-3"><span>Изменить</span></a> <a href="{% url 'projects:delete' post.id %}" class="active-btn mt-3"><span>Удалить</span></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

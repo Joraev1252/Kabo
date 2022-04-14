@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="header_promo other_pages_header">
+            <div class="header_promo_background" style="background-image: url({% static 'data/img/promo.jpg' %})"></div>
+            <div class="video_overlay"></div>
+            <div class="header_promo_video">
+                <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+                    src="{% static 'data/promo/promo_header.mp4' %}"></video>
+            </div>
+            <div class="header_promo_title">
+                <h1><span>НОВОСТИ</span></h1>
+                <ul class="header_promo_breadcrumbs">
+                    <li>
+                        <a href="{% url 'Home:HomeViews' %}">Главная</a><i>/</i>
+                    </li>
+                    <li>
+                        <span>
+                            НОВОСТИ
+                        </span>
+                    </li>
+                </ul>
+            </div>
+</header>
+<p></p>
+<body>
+     <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Создать</button>
+     </form>
+<p></p>
+</body>
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <style>
+    label {
+        color: white;
+    }
+    </style>
+
+</head>
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabo Primer</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="data/img/favicon.png" type="image/x-icon">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'data/css/animate.css' %}" media="all"  />
+    <link rel="stylesheet" href="{% static 'data/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'data/css/style.css' %}">
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="{% static 'data/js/viewportchecker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'data/js/swiper.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'data/js/index.js' %}"></script>
+
+
+    <div class="header_promo other_pages_header">
+        <div class="header_promo_background" style="background-image: url({% static 'data/img/promo.jpg' %})"></div>
+        <div class="video_overlay"></div>
+        <div class="header_promo_video">
+            <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+                   src="{% static 'data/promo/promo_header.mp4' %}"></video>
+        </div>
+        <div class="header_promo_title">
+            <h1>Регистрация</h1>
+        </div>
+</header>
+
+
+<body background="{% static 'data/img/RAL-7021-CHyorno-serii.png' %}">
+<p></p>
+<form action="/signin" method="post">
+    {% csrf_token %}
+    <label for="">Username</label>
+            <input type="text" id="username" name="username" placeholder="Create a username" Required>
+            <br>
+            <p></p>
+
+            <label for="">First name</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter your first name" Required>
+            <br>
+            <p></p>
+
+            <label for="">Last name</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter your last name" Required>
+            <br>
+            <p></p>
+
+            <label for="">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" Required>
+            <br>
+            <p></p>
+            <label for="">Password</label>
+                            <input type="password" id="pass1" name="pass1" placeholder="Create a password" Required>
+            <br>
+            <p></p>
+            <label for="">Confirm your password</label>
+                            <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" Required>
+            <br>
+            <p></p>
+            <button type="submit">Sign Up</button>
+</form>
+</body>
+</html>
+

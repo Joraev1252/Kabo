@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ <header class="header_promo other_pages_header">
+            <div class="header_promo_background" style="background-image: url({% static 'data/img/promo.jpg' %})"></div>
+            <div class="video_overlay"></div>
+            <div class="header_promo_video">
+                <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+                    src="{% static 'data/promo/promo_header.mp4' %}"></video>
+            </div>
+            <div class="header_promo_title">
+                <h1><span>{{ detail_news.title }}</span></h1>
+                <ul class="header_promo_breadcrumbs">
+                    <li>
+                        <a href="{% url 'Home:HomeViews' %}">Главная</a><i>/</i>
+                    </li>
+                    <li>
+                        <a href="{% url 'News:NewsViews' %}">НОВОСТИ</a><i>/</i>
+                    </li>
+                    <li>
+                        <span>
+                            {{ detail_news.title }}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </header>
+<!-- news section -->
+<section class="news">
+            <div class="container">
+                <div class="section_content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="news_individual">
+                                <img src='{{ detail_news.imageURL }}' alt="">
+                                <p class="news_date"> <span>Kabo Primer </span>/ {{ detail_news.date }} </p>
+                                <h2 class="news_title">{{ detail_news.title }}</h2>
+                                <p>
+                                    {{ detail_news.news }}
+                                </p>
+                                <a href="{% url 'News:NewsViews' %}" class="active-btn mt-3"><span>Вернуться к списку участников</span></a>
+                            </div>
+                            <p align="right"><a href="{% url 'News:edit' detail_news.id %}" class="active-btn mt-3"><span>Изменить</span></a> <a href="{% url 'News:delete' detail_news.id %}" class="active-btn mt-3"><span>Удалить</span></a></p></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+{% endblock %}

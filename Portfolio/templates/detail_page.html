@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <header class="header_promo other_pages_header">
+            <div class="header_promo_background" style="background-image: url({% static 'data/img/promo.jpg' %})"></div>
+            <div class="video_overlay"></div>
+            <div class="header_promo_video">
+                <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+                    src="{% static 'data/promo/promo_header.mp4' %}"></video>
+            </div>
+            <div class="header_promo_title">
+                <h1><span> КОНГРЕСС ХОЛЛ </span></h1>
+                <ul class="header_promo_breadcrumbs">
+                    <li>
+                        <a href="{% url 'Home:HomeViews' %}">Главная</a><i>/</i>
+                    </li>
+                    <li>
+                        <a href="{% url 'Portfolio:views' %}">ПОРТФОЛИО</a><i>/</i>
+                    </li>
+                    <li>
+                        <span>
+                            КОНГРЕСС ХОЛЛ
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="mission">
+            <div class="container">
+                <div class="section_content">
+                    <ul class="divisions">
+                        <li>
+                            <div class="divisions_item first_animation invisible">
+                                <div class="divisions_item_left">
+                                    <img src="{{ post.imageURL }}" alt="">
+                                </div>
+                                <div class="divisions_item_right">
+                                    <h5 class="company_name long_line_before">Kabo</h5>
+                                    <h2>{{ post.full_name }}</h2>
+                                    <h3>{{ post.nationality }}</h3>
+                                    <h4>Age: {{ post.age }}</h4>
+                                    <p>{{ post.info }}</p>
+                                    <p align="right"><a href="{% url 'Portfolio:views' %}" class="active-btn mt-3"><span>Вернуться к списку новостей</span></a></p>
+                                    <p align="right"><a href="{% url 'Portfolio:edit' post.id %}" class="active-btn mt-3"><span>Изменить</span></a> <a href="{% url 'Portfolio:delete' post.id %}" class="active-btn mt-3"><span>УДАЛИТЬ</span></a></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}

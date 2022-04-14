@@ -1,0 +1,50 @@
+{% load static %}
+
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabo Primer</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="data/img/favicon.png" type="image/x-icon">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'data/css/animate.css' %}" media="all"  />
+    <link rel="stylesheet" href="{% static 'data/css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'data/css/style.css' %}">
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="{% static 'data/js/viewportchecker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'data/js/swiper.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'data/js/index.js' %}"></script>
+
+
+    <class="header_promo other_pages_header">
+        <div class="header_promo_background" style="background-image: url({% static 'data/img/promo.jpg' %})"></div>
+        <div class="video_overlay"></div>
+        <div class="header_promo_video">
+            <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+                   src="{% static 'data/promo/promo_header.mp4' %}"></video>
+        </div>
+        <div class="header_promo_title">
+            <h2>ЗДРАВСТВУЙТЕ<br>ДОБРО ПОЖАЛОВАТЬ В НАШ САЙТ KABO!</h2>
+
+            <a href="/signup" class="active-btn mt-3"><span>Sign Up</span></a> <a href="/signin" class="active-btn mt-3"><span>Sign In</span></a>
+
+        </div>
+</header>
+
+
+
+
+
+

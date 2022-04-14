@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="header_promo other_pages_header">
+            <div class="header_promo_background" style="background-image: url({% static 'data/img/promo.jpg' %})"></div>
+            <div class="video_overlay"></div>
+            <div class="header_promo_video">
+                <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+                    src="{% static 'data/promo/promo_header.mp4' %}"></video>
+            </div>
+            <div class="header_promo_title">
+                <h1><span>НЕБОСКРЕБЫ ТАШКЕНТА</span></h1>
+                <ul class="header_promo_breadcrumbs">
+                    <li>
+                        <a href="{% url 'Home:HomeViews' %}">Главная</a><i>/</i>
+                    </li>
+                    <li>
+                        <span>
+                            ПРОЕКТЫ
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="projects">
+            <div class="container">
+                <div class="section_content">
+                    <div class="projects_list">
+                        {% for project in project_list %}
+                            <div class="projects_item first_animation invisible">
+                                <a href="{% url 'projects:detail' project.id %}">
+                                    <span class="projects_img"><img src='{{ project.imageURL }}' alt=""></span>
+
+                                    <span class="projects_caption">
+                                        <h5>{{ project.company }}</h5>
+                                        <h7>{{ project.founder }}</h7>
+                                    </span>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <p align="right"><a href="{% url 'projects:add' %}" class="active-btn mt-3"><span>ДОБАВИТЬ ПРОЕКТ</span></a></p>
+                </div>
+            </div>
+        </section>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="header_promo other_pages_header">
+            <div class="header_promo_background" style="background-image: url({% static 'data/img/promo.jpg' %})"></div>
+            <div class="video_overlay"></div>
+            <div class="header_promo_video">
+                <video autoplay loop muted playsinline webkit-playsinline poster="#" preload="none"
+                    src="{% static 'data/promo/promo_header.mp4' %}"></video>
+            </div>
+            <div class="header_promo_title">
+                <h1><span> ПОРТФОЛИО </span></h1>
+                <ul class="header_promo_breadcrumbs">
+                    <li>
+                        <a href="{% url 'Home:HomeViews' %}">Главная</a><i>/</i>
+                    </li>
+                    <li>
+                        <span>
+                            ПОРТФОЛИО
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="portfolio_page">
+            <div class="container">
+                <div class="section_content">
+                    <div class="portfolio_list">
+                        {% for post in member_list %}
+                        <a href="" class="portfolio_text_left triangle_before first_animation invisible">
+                            <div class="right_col">
+                                <div class="portfolio_img pl-50 lines_after">
+                                    <img src="{{ post.imageURL }}" alt="">
+                                </div>
+                            </div>
+                            <div class="left_col text_left">
+                                <span class="portfolio_type_text">Участники</span>
+                                <h2>{{ post.full_name }}</h2>
+                                <h3>{{ post.nationality }}</h3>
+                                <p>{{ post.date }}</p>
+                            </div>
+                        </a>
+                        <p align="right"><a href="{% url 'Portfolio:detail' post.id %}" class="active-btn mt-3"><span>УЗНАТЬ БОЛЬШЕ</span></a></p>
+                        {% endfor %}
+                        <p align="right"><a href="{% url 'Portfolio:create' %}" class="active-btn mt-3"><span>ДОБАВИТЬ ПОЛЬЗОВАТЕЛЯ</span></a></p>
+
+
+                        <ul class="pagi first_animation invisible">
+                            <!-- display НАЗАД in second page -->
+                            <li class="d-none"><a href="">Назад</a></li>
+                            <li class="active"><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">ВПЕРЁД</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+{% endblock %}
